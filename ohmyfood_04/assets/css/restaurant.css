@@ -89,34 +89,57 @@ footer {
   gap: 15px;
   background-color: #353535;
   color: #ffffff;
-  padding: 22px 25px 22px 25px;
+  padding: 22px 25px;
 }
 footer h3 {
   font-family: shrikhand;
-  font-size: 1.5rem;
+  font-size: 18px;
+  font-weight: 400;
 }
 footer ul {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 7px;
 }
 footer ul li {
   margin-bottom: 10px;
 }
 footer ul li a {
-  font-weight: 400;
-  font-size: 1rem;
   color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
 }
 footer i {
   font-size: 1.5rem;
-  padding-left: 12px;
+  padding-right: 12px;
 }
 
 @media (min-width: 768px) {
+  .fa-heart {
+    margin: 0;
+  }
   footer {
+    flex-direction: row-reverse;
+  }
+  footer h3 {
+    align-self: flex-end;
+  }
+  footer ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding-top: 10px;
+    gap: 20px;
+  }
+  footer ul li {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  footer ul a {
+    font-weight: 400;
+  }
+  footer i {
+    margin-right: 11px;
+    padding-right: 12px;
   }
 }
 @media (min-width: 1200px) {
@@ -124,16 +147,14 @@ footer i {
     display: flex;
     flex-direction: row-reverse;
     gap: 25px;
-    padding: 50px 25px 0px 25px;
+    padding: 30px 25px 15px 25px;
   }
   footer h3 {
     align-self: flex-end;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
   footer ul {
     list-style-type: none;
-    flex-direction: revert;
-    padding-block: 30px;
   }
   footer li {
     margin-bottom: 10px;
@@ -255,6 +276,52 @@ section i {
   opacity: 0;
 }
 
+.fa-heart {
+  position: absolute;
+  right: 20px;
+  font-size: 1.5rem;
+}
+
+.fa-solid.fa-heart {
+  opacity: 0;
+  background-image: linear-gradient(to top, #8641d8, #ff60d3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.fa-regular.fa-heart {
+  opacity: 1;
+}
+
+.fa-solid.fa-heart:hover {
+  opacity: 1;
+}
+
+.fa-regular.fa-heart:hover {
+  opacity: 0;
+}
+
+/*****Media queries*****/
+@media (min-width: 576px) {
+  .fa-heart {
+    right: 25vw;
+  }
+}
+@media (min-width: 768px) {
+  main header {
+    justify-content: center;
+    gap: 20px;
+  }
+  .fa-heart {
+    right: 30vw;
+  }
+}
+@media (min-width: 992px) {
+  .fa-heart {
+    right: 40vw;
+  }
+}
 @media (min-width: 1200px) {
   img {
     -o-object-fit: cover;

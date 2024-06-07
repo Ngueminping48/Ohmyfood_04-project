@@ -115,6 +115,61 @@ section {
     }    
 }
 
+.fa-heart {
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+}
+
+.fa-solid.fa-heart {
+    opacity: 0;
+    background-image: linear-gradient(
+        to top,
+        darken($color-primary, 5%),
+        darken($color-secondary, 5%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.fa-regular.fa-heart {
+    opacity: 1;
+}
+
+.fa-solid.fa-heart:hover {
+    opacity: 1;
+}   
+
+.fa-regular.fa-heart:hover {
+    opacity: 0;
+}
+
+/*****Media queries*****/
+
+@media (min-width: 576px) {
+    .fa-heart {
+        right: 25vw;
+    }
+}   
+
+@media (min-width: 768px) {
+    main header {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .fa-heart {
+        right: 30vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .fa-heart {
+        right: 40vw;
+    }
+}
+
 @media (min-width: 1200px) {
     img {
         object-fit: cover;

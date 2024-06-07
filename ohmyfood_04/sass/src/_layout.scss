@@ -82,8 +82,9 @@ a {
       to top,
       darken($color-primary, 5%),
       darken($color-secondary, 5%)
-    ); box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35); 
-  } 
+    );
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
+  }
 }
 
 /***** heart****/
@@ -116,38 +117,69 @@ footer {
   gap: 15px;
   background-color: $slate;
   color: $white;
-  padding: 22px 25px 22px 25px;
+  padding: 22px 25px;
 
   h3 {
     font-family: shrikhand;
-    font-size: 1.5rem;
+    font-size: 18px;
+    font-weight: 400;
   }
 
   ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 7px;
 
     li {
       margin-bottom: 10px;
 
       a {
-        font-weight: 400;
-        font-size: 1rem;
         color: $white;
+        font-size: 1rem;
+        font-weight: 500;
       }
     }
   }
+
   i {
     font-size: 1.5rem;
-    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
 @media (min-width: 768px) {
+  .fa-heart {
+    margin: 0;
+  }
+
   footer {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+
+    h3 {
+      align-self: flex-end;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      padding-top: 10px;
+      gap: 20px;
+
+      li {
+        display: flex;
+
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-weight: 400;
+      }
+    }
+
+    i {
+      margin-right: 11px;
+      padding-right: 12px;
+    }
   }
 }
 
@@ -156,17 +188,15 @@ footer {
     display: flex;
     flex-direction: row-reverse;
     gap: 25px;
-    padding: 50px 25px 0px 25px;
+    padding: 30px 25px 15px 25px;
 
     h3 {
       align-self: flex-end;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
 
     ul {
       list-style-type: none;
-      flex-direction: revert;
-      padding-block: 30px;
     }
 
     li {
@@ -176,6 +206,7 @@ footer {
     i {
       padding-right: 20px;
     }
+
     a {
       display: flex;
       align-items: center;
