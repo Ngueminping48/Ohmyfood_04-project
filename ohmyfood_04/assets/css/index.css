@@ -82,7 +82,7 @@ a {
   opacity: 1;
 }
 
-/*** footers ****/
+/*****footers****/
 footer {
   display: flex;
   flex-direction: column;
@@ -151,7 +151,46 @@ footer i {
   }
 }
 /* INDEX */
-/****** main_header ******/
+htm html {
+  font-size: 62.5%;
+}
+
+html .loader {
+  animation-duration: 1.5s;
+  animation-delay: 4s;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  inset: 0;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 9999;
+  opacity: 0.9;
+  animation: disappear 1.5s ease-out forwards;
+  transform-origin: top;
+}
+
+html .loader::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 6px solid #9356dc;
+  border-top-color: #ff79da;
+  animation: loading 0.75s ease ease-in-out;
+  animation-iteration-count: 2s;
+}
+
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 main header {
   display: flex;
   flex-direction: column;
