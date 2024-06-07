@@ -28,7 +28,7 @@ html .loader::after {
 }
 @keyframes disappear {
   to {
-    transform: scale(0)
+    transform: scale(0);
   }
 }
 
@@ -60,16 +60,16 @@ form {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.35);
 }
 
-  .fa-location-dot {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  span {
-    font-size: 1.2rem;
-    align-self: center;
-  }
+.fa-location-dot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: 1.2rem;
+  align-self: center;
+}
 
 h1 {
   text-align: center;
@@ -95,10 +95,10 @@ p {
   flex-direction: column;
   margin-top: 40px;
   margin-bottom: 40px;
-  
+
   h2 {
     font-size: 1.5rem;
-  margin: 20px 60px 20px 15px;
+    margin: 20px 60px 20px 15px;
   }
 
   ol {
@@ -110,47 +110,47 @@ p {
     padding: 0px 25px 0px 25px;
   }
 
-    li {
-      position: relative;
-      counter-increment: num;
+  li {
+    position: relative;
+    counter-increment: num;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: $silver;
+    border-radius: 20px;
+    padding: 20px 20px 20px 35px;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+    font-size: 1.2rem;
+
+    &::before {
+      content: counter(num);
+      position: absolute;
+      left: 15px;
+      background-color: $color-primary;
+      color: $white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
       display: flex;
-      align-items: center;
-      gap: 20px;
-      background-color: $silver;
-      border-radius: 20px;
-      padding: 20px 20px 20px 35px;
-      box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
-      font-size: 1.2rem;
-
-      &::before {
-        content: counter(num);
-        position: absolute;
-        left: 15px;
-        background-color: $color-primary;
-        color: $white;
-        border-radius: 50%;
-        width: 20px;
-        height: 20px;
-        display: flex;
-        justify-content: center;
-        font-size: 1rem;
-        margin-left: -30px;
-      }
-    }
-
-    li:hover i {
-      color: $color-primary;
+      justify-content: center;
+      font-size: 1rem;
+      margin-left: -30px;
     }
   }
 
-  /*** restaurants_les restaurants ******/
+  li:hover i {
+    color: $color-primary;
+  }
+}
 
-    [id="restaurants"] {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 20px 20px 80px;
-      background-color: $silver;
+/*** restaurants_les restaurants ******/
+
+[id="restaurants"] {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px 80px;
+  background-color: $silver;
 
   h2 {
     font-size: 1.5rem;
@@ -182,7 +182,6 @@ p {
       color: $green-font;
       padding: 5px 10px;
       border-radius: 2px;
-      
     }
   }
 
@@ -226,7 +225,7 @@ p {
       margin-bottom: 0;
     }
   }
-  
+
   .functioning {
     flex-direction: column;
     align-items: baseline;
@@ -236,7 +235,7 @@ p {
     ol {
       display: flex;
       flex-direction: row;
-      gap: 50px
+      gap: 50px;
     }
 
     li {
@@ -267,28 +266,4 @@ p {
       height: 250px;
     }
   }
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
