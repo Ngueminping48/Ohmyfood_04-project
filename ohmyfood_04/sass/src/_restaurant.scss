@@ -119,9 +119,12 @@ section {
     position: absolute;
     right: 20px;
     font-size: 1.5rem;
+    top: 40px;
+   // transform: translateY(-50%);
+
 }
 
-.fa-solid.fa-heart {
+/****.fa-solid.fa-heart {
     opacity: 0;
     background-image: linear-gradient(
         to top,
@@ -143,7 +146,7 @@ section {
 
 .fa-regular.fa-heart:hover {
     opacity: 0;
-}
+} ****/
 
 /*****Media queries*****/
 

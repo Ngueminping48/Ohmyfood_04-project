@@ -1,3 +1,5 @@
+// tous les elements communs de la page d'accueil et de la page restaurant 
+
 /* LAYOUT */
 
 $color-primary: #9356dc;
@@ -88,27 +90,67 @@ a {
 }
 
 /***** heart****/
-.fa-heart {
+/***.fa-heart {
   border: none;
   background-color: $silver;
   padding: 0;
-  margin: 0 15px 0 0;
+  margin: 0 15px 0 0;***/
 
-  .fa-solid.fa-heart {
-    opacity: 0;
+  /*****.fa-solid.fa-heart {
     background-image: linear-gradient(
-      to top,
-      darken($color-primary, 5%),
-      darken($color-secondary, 5%)
+    to top, $color-primary, $color-secondary
     );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-}
+      background-clip: text;
+     -webkit-background-clip: text;
+      color: transparent;
+      transition: all 200ms ease-in-out;
+
 .fa-regular.fa-heart {
   opacity: 1;
 }
+&:hover {
+  opacity: 1;
+  transform: scale(1.5) translateX(5px);
+  background-image: linear-gradient(
+    to top,
+    lighten($color-primary, 5%),
+    lighten($color-secondary, 5%)
+  );
+  //transition: all 200ms ease-in-out; 
+
+}
+
+}****/
+
+.fa-regular.fa-heart {
+  position: absolute;
+  right: 20px;
+  font-size: 1.5rem;
+  opacity: 1;
+}
+.fa-solid.fa-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 1;
+}
+.fa-solid.fa-heart:hover {
+  opacity: 1;
+}
+.fa-regular.fa-heart:hover {
+  opacity: 1;
+}
+.fa-solid.fa-heart {
+  background-image: linear-gradient(darken($color-primary, 5%), darken($color-secondary, 5%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color : transparent;
+}
+/**.fa-regular.fa-heart {
+  background-image: linear-gradient($color-primary, $color-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}***/
+
 
 /*****footers****/
 footer {
@@ -121,8 +163,9 @@ footer {
 
   h3 {
     font-family: shrikhand;
-    font-size: 18px;
+    font-size: 1.5rem;
     font-weight: 400;
+    margin-bottom: 20px;
   }
 
   ul {
