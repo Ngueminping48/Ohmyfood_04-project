@@ -64,69 +64,35 @@ a {
 }
 
 /***** heart****/
-/***.fa-heart {
-  border: none;
-  background-color: $silver;
-  padding: 0;
-  margin: 0 15px 0 0;***/
-/*****.fa-solid.fa-heart {
-    background-image: linear-gradient(
-    to top, $color-primary, $color-secondary
-    );
-      background-clip: text;
-     -webkit-background-clip: text;
-      color: transparent;
-      transition: all 200ms ease-in-out;
-
-.fa-regular.fa-heart {
-  opacity: 1;
-}
-&:hover {
-  opacity: 1;
-  transform: scale(1.5) translateX(5px);
-  background-image: linear-gradient(
-    to top,
-    lighten($color-primary, 5%),
-    lighten($color-secondary, 5%)
-  );
-  //transition: all 200ms ease-in-out; 
-
-}
-
-}****/
-.fa-regular.fa-heart {
-  position: absolute;
-  right: 20px;
+.fa-heart {
+  font-weight: 100;
+  background: #000000;
   font-size: 1.5rem;
-  opacity: 1;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to top, #a16be0, #ff93e1);
+  transition: transform 300ms ease-in-out;
+}
+
+.fa-solid.fa-heart:hover {
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
+  font-size: 1.5rem;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: red;
+  transform: scale(1.1);
 }
 
 .fa-solid.fa-heart {
-  position: absolute;
-  font-size: 1.5rem;
-  opacity: 1;
+  opacity: 0;
 }
 
 .fa-solid.fa-heart:hover {
   opacity: 1;
 }
 
-.fa-regular.fa-heart:hover {
-  opacity: 1;
-}
-
-.fa-solid.fa-heart {
-  background-image: linear-gradient(#8641d8, #ff60d3);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-/**.fa-regular.fa-heart {
-  background-image: linear-gradient($color-primary, $color-secondary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}***/
 /*****footers****/
 footer {
   display: flex;
