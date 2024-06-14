@@ -1,4 +1,4 @@
-// tous les elements communs de la page d'accueil et de la page restaurant 
+// tous les elements communs de la page d'accueil et de la page restaurant
 
 /* LAYOUT */
 
@@ -19,6 +19,10 @@ body {
   padding: 0;
   $font-primary: "Roboto", sans-serif;
   $font-secondary: "Shrikhand", cursive;
+}
+
+.fa-lg {
+  line-height: 1.5em;
 }
 
 ul,
@@ -90,34 +94,25 @@ a {
 }
 
 /***** heart****/
-
-.fa-heart {
-  font-weight: 100;
-  background: #000000;
-  font-size: 1.5rem;
-  -webkit-background-clip: text;
-          background-clip: text;
-          background-image: linear-gradient(to top, lighten($color-primary, 5%), lighten($color-secondary, 5%));
-  transition: transform 300ms ease-in-out;
-}
-.fa-solid.fa-heart:hover {
-  font-weight: 700;
-  cursor: pointer;
-  background: linear-gradient(180deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
-  font-size: 1.5rem;
-  -webkit-background-clip: text;
-          background-clip: text;
-  color:red ;
-  transform: scale(1.1);
-}
-
 .fa-solid.fa-heart {
+  background-image: linear-gradient(to top, $color-primary, $color-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   opacity: 0;
+  transition: all 2000ms ease-in-out;
+
+  .fa-regular.fa-heart {
+    opacity: 0;
+  }
+  &:hover {
+    background-image: linear-gradient(to top, lighten($color-primary, 5%), lighten($color-secondary, 5%));
+    opacity: 1;
+    cursor: pointer;
+  }
 }
 
-.fa-solid.fa-heart:hover {
-  opacity: 1;
-}
+
 
 /*****footers****/
 footer {

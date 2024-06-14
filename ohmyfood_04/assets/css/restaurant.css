@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+.fa-lg {
+  line-height: 1.5em;
+}
+
 ul,
 figure {
   margin: 0;
@@ -64,33 +68,21 @@ a {
 }
 
 /***** heart****/
-.fa-heart {
-  font-weight: 100;
-  background: #000000;
-  font-size: 1.5rem;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background-image: linear-gradient(to top, #a16be0, #ff93e1);
-  transition: transform 300ms ease-in-out;
-}
-
-.fa-solid.fa-heart:hover {
-  font-weight: 700;
-  cursor: pointer;
-  background: linear-gradient(180deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 97%);
-  font-size: 1.5rem;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: red;
-  transform: scale(1.1);
-}
-
 .fa-solid.fa-heart {
+  background-image: linear-gradient(to top, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0;
+  transition: all 2000ms ease-in-out;
+}
+.fa-solid.fa-heart .fa-regular.fa-heart {
   opacity: 0;
 }
-
 .fa-solid.fa-heart:hover {
+  background-image: linear-gradient(to top, #a16be0, #ff93e1);
   opacity: 1;
+  cursor: pointer;
 }
 
 /*****footers****/
@@ -207,9 +199,10 @@ header h1 {
   font-family: "Shrikhand", cursive;
   font-size: 1.7rem;
   font-weight: 300;
-  margin: 10px;
+  margin: 10px 10px 10px 18px;
 }
 header i {
+  position: absolute;
   top: 20px;
   right: 20px;
   width: 30px;
@@ -232,6 +225,9 @@ main header {
 main img {
   height: 275px;
 }
+main .fa-heart {
+  top: 30px;
+}
 
 article {
   display: flex;
@@ -242,7 +238,9 @@ article {
 section {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  position: relative;
+  z-index: 10;
+  padding: 10px 15px;
 }
 section h2 {
   font-family: "Shrikhand", cursive;
@@ -266,25 +264,12 @@ section li {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  margin: 10px 10px 20px;
+  margin: 10px 0 20px;
   border-radius: 20px;
-  padding: 10px;
+  padding: 0 0 0 10px;
   background-color: #f6f6f6;
   box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.1);
-  animation: appear 3s;
-  animation-fill-mode: both;
-}
-section li:nth-child(1) {
-  animation-delay: 300ms;
-}
-section li:nth-child(2) {
-  animation-delay: 600ms;
-}
-section li:nth-child(3) {
-  animation-delay: 900ms;
-}
-section li:nth-child(4) {
-  animation-delay: 1200ms;
+  overflow: hidden;
 }
 @keyframes appear {
   0% {
@@ -294,111 +279,83 @@ section li:nth-child(4) {
     transform: scale(1);
   }
 }
-section li .fa-circle-check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 60px;
-  opacity: 0;
-  height: 60px;
-  margin-left: 10px;
-  border-radius: 0 20px 20px 0;
-  top: 0;
-  right: 0px;
-  transition: all 400ms;
-}
-section li:hover .fa-circle-check {
-  opacity: 1;
-  background-color: #99e2d0;
-  color: #ffffff;
-}
 section li h3 {
   display: block;
   font-size: 1.1rem;
   margin: 0 0 5px;
-  font-weight: 500;
 }
 section li p {
   margin: 0;
   font-size: 1rem;
   font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
-section li i {
-  position: absolute;
-  right: 0;
-  font-size: 1.5rem;
-  color: #99e2d0;
+section li hgroup {
+  overflow: hidden;
+  white-space: nowrap;
 }
-section li b {
+section li div {
+  display: flex;
+  align-items: end;
+}
+section li div b {
+  padding: 16px 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+section li div .fa-circle-check {
+  opacity: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 17px;
-  bottom: 15px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transform: translateX(0px);
-  transition: all 500ms;
+  color: #ffffff;
+  background: #99e2d0;
+  width: 0;
+  height: 100%;
+  position: relative;
+  border-radius: 0 15px 15px 0;
+  padding: 29px 0;
+  transition: all 600ms ease-in-out;
 }
-section li li:hover b {
-  transform: translateX(-50px);
-}
-
-li:hover i {
-  opacity: 0;
-}
-
-/*****Heart*****/
-.fa-solid.fa-heart {
-  opacity: 0;
-  height: 25px;
-  position: absolute;
-  padding-top: 14px;
-}
-
-.fa-solid.fa-heart:hover,
-.fa-solid.fa-heart:focus {
+section li:hover .fa-circle-check, section li:focus .fa-circle-check {
   opacity: 1;
-  background: linear-gradient(to top, #9356dc, #ff79da);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: rotate 2s ease-in-out infinite;
+  width: 64px;
+  padding: 29px 16px;
 }
 
-@keyframes rotate {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  100% {
-    transform: scale(1);
-  }
+section:nth-child(2) li {
+  animation: appear 1s both;
 }
+
+section:nth-child(3) li {
+  animation: appear 1s both 500ms;
+}
+
+section:nth-child(4) li {
+  animation: appear 1s both 1s;
+}
+
 /*****Media queries*****/
-@media (min-width: 576px) {
+/**@media (min-width: 576px) {
   .fa-heart {
     right: 25vw;
   }
-}
+}**/
 @media (min-width: 768px) {
   main header {
     justify-content: center;
     gap: 20px;
   }
   .fa-heart {
-    right: 30vw;
+    right: 25vw;
   }
 }
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
   .fa-heart {
     right: 40vw;
   }
-}
+}*/
 @media (min-width: 1200px) {
   img {
     -o-object-fit: cover;
@@ -414,20 +371,15 @@ li:hover i {
     margin-top: -5px;
   }
   .menu h1 {
-    display: flex;
-    align-self: center;
     font-size: 1.8rem;
-    margin-bottom: 0;
+    margin: 10px 80px 0 50px;
   }
-  .menu .section {
+  .menu section {
     align-self: center;
     width: 60%;
   }
-  .menu .section li {
+  .menu section li {
     width: 100%;
-  }
-  .menu i {
-    right: 0;
   }
   .menu h2 {
     font-size: 1.5rem;
@@ -440,13 +392,5 @@ li:hover i {
   }
   .menu p {
     font-size: 1.1rem;
-  }
-  .menu .fa-heart {
-    position: absolute;
-    top: 40px;
-    right: 350px;
-  }
-  .menu .fa-check-circle {
-    opacity: 1;
   }
 }
