@@ -1,11 +1,9 @@
+@charset "UTF-8";
 /* LAYOUT */
+/****balise générales****/
 body {
   margin: 0;
   padding: 0;
-}
-
-.fa-lg {
-  line-height: 1.5em;
 }
 
 ul,
@@ -34,6 +32,7 @@ a {
 .logo {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   background-color: #ffffff;
   padding: 15px 0 15px 0;
 }
@@ -45,6 +44,7 @@ a {
 .btn {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   align-items: center;
   align-self: center;
   border-radius: 25px;
@@ -62,12 +62,12 @@ a {
   background-image: linear-gradient(to top, #a16be0, #ff93e1);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.35);
 }
-.btn:active {
-  background-image: linear-gradient(to top, #8641d8, #ff60d3);
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.35);
-}
 
 /***** heart****/
+.fa-lg {
+  line-height: 1.5em;
+}
+
 .fa-solid.fa-heart {
   background-image: linear-gradient(to top, #9356dc, #ff79da);
   background-clip: text;
@@ -85,7 +85,7 @@ a {
   cursor: pointer;
 }
 
-/*****footers****/
+/*****footer****/
 footer {
   display: flex;
   flex-direction: column;
@@ -211,6 +211,7 @@ header i {
 
 main {
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 main header {
@@ -231,12 +232,14 @@ main .fa-heart {
 
 article {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   background-color: #f6f6f6;
 }
 
 section {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   position: relative;
   z-index: 10;
@@ -309,6 +312,7 @@ section li div .fa-circle-check {
   opacity: 0;
   display: flex;
   justify-content: center;
+  flex-direction: row;
   color: #ffffff;
   background: #99e2d0;
   width: 0;

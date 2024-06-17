@@ -11,14 +11,14 @@ body {
 }
 
 header {
-  position: relative;
-
+  position: relative; //logo et image 
+//image de logo et nom
   img {
     display: block;
     width: 197px;
     margin: 20px auto 15px;
   }
-
+//nom du restaurant
   h1 {
     font-family: "Shrikhand", cursive;
     font-size: 1.7rem;
@@ -36,8 +36,7 @@ header {
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  @include flexCenter(column);
 
   header {
     display: flex;
@@ -48,7 +47,7 @@ main {
     margin-top: -32px;
     padding: 15px 16px 15px 0;
   }
-
+// image du restaurant
   img {
     height: 275px;
   }
@@ -57,19 +56,19 @@ main {
     top: 30px;
   }
 }
-
+//article des menus 
 article {
-  display: flex;
-  flex-direction: column;
+  @include flexCenter(column);
   background-color: $silver;
 }
-
+//section des menus 
 section {
-  display: flex;
-  flex-direction: column;
+  @include flexCenter(column);
   position: relative;
   z-index: 10;
   padding: 10px 15px;
+
+// titre des menus
 
   h2 {
     font-family: "Shrikhand", cursive;
@@ -113,11 +112,14 @@ section {
       }
     }
 
+    // nom du plat
     h3 {
       display: block;
       font-size: 1.1rem;
       margin: 0 0 5px;
   }
+
+  // description du plat
 
   p {
       margin: 0;
@@ -127,14 +129,14 @@ section {
       overflow: hidden;
       white-space: nowrap;
   }
-
+// nom du plat et prix et description du plat
   & hgroup {
       overflow: hidden;
       white-space: nowrap;
       
   }
 
-
+// prix du plat et fa circlecheck 
   div {
       display: flex;
       align-items: end;
@@ -148,8 +150,7 @@ section {
 
       .fa-circle-check {
           opacity: 0;
-          display: flex;
-          justify-content: center;
+          @include flexCenter();
           color: $white;
           background: $color-tertiary;
           width: 0;
@@ -198,7 +199,7 @@ section:nth-child(4) li {
 
 @media (min-width: 768px) {
   main header {
-    justify-content: center;
+    justify-content: center; //pour centrer le titre sur l'image en haut de page + mettre le nom du restaurants et le coeur au milieu de la page
     gap: 20px;
   }
 

@@ -140,19 +140,9 @@
   }
 }
 
-
-main header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 0 10px;
-  background-color: $silver;
-}
-
+// HEADER location dot + span
 form {
-  display: flex;
-  justify-content: center;
+  @include flexCenter();
   flex-direction: row;
   gap: 20px;
   width: 100%;
@@ -162,14 +152,23 @@ form {
 }
 
 .fa-location-dot {
-  display: flex;
-  justify-content: center;
+ @include flexCenter();
   align-items: center;
 }
 
 span {
   font-size: 1.2rem;
   align-self: center;
+}
+
+// MAIN HEADER qui englobe le h1 le p jusqu'au footer
+
+main header {
+  @include flexCenter(column);
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+  background-color: $silver;
 }
 
 h1 {
@@ -192,8 +191,7 @@ p {
 /****** functioning *****/
 
 .functioning {
-  display: flex;
-  flex-direction: column;
+  @include flexCenter(column);
   margin-top: 40px;
   margin-bottom: 40px;
 
@@ -232,8 +230,7 @@ p {
       border-radius: 50%;
       width: 20px;
       height: 20px;
-      display: flex;
-      justify-content: center;
+      @include flexCenter();
       font-size: 1rem;
       margin-left: -30px;
     }
@@ -247,8 +244,7 @@ p {
 /*** restaurants_les restaurants ******/
 
 [id="restaurants"] {
-  display: flex;
-  flex-direction: column;
+  @include flexCenter(column);
   gap: 20px;
   padding: 20px 20px 80px;
   background-color: $silver;
@@ -267,14 +263,16 @@ p {
   }
 
   li {
-    display: flex;
-    flex-direction: column;
+   @include flexColumn();
     width: 100%;
   }
+  // FIGURE égale image + figcaption
 
   figure {
     position: relative;
 
+    //nouveau nouveau nouveau badge
+    //nouveau badge
     b {
       position: absolute;
       top: 20px;
@@ -286,6 +284,8 @@ p {
     }
   }
 
+  // image pour les cards
+
   img {
     width: 100%;
     height: 200px;
@@ -293,9 +293,10 @@ p {
     border-radius: 15px 15px 0 0;
   }
 
+  // figcaption pour les cards
+
   figcaption {
-    display: flex;
-    flex-direction: column;
+    @include flexColumn();
     align-items: baseline;
     padding: 20px 15px 0;
     background-color: $white;
@@ -313,19 +314,17 @@ p {
     margin: 0 0 5px;
     font-size: 1.2rem;
   }
-
+//heart pour les cards et le lien pour le coeur 
   i {
     position: absolute;
     right: 1rem;
-
-
   }
 }
 
 @media (min-width: 1200px) {
   header {
     p {
-      margin-bottom: 0;
+      margin-bottom: 0; //P de decouvrir nos restaurants 
     }
   }
 
