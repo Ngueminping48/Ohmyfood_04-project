@@ -1,3 +1,12 @@
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 /******Header******/
 body {
   margin: 0;
@@ -11,14 +20,14 @@ body {
 }
 
 header {
-  position: relative; //logo et image 
-//image de logo et nom
+  position: relative; //logo et image
+  //image de logo et nom
   img {
     display: block;
     width: 197px;
     margin: 20px auto 15px;
   }
-//nom du restaurant
+  //nom du restaurant
   h1 {
     font-family: "Shrikhand", cursive;
     font-size: 1.7rem;
@@ -47,7 +56,7 @@ main {
     margin-top: -32px;
     padding: 15px 16px 15px 0;
   }
-// image du restaurant
+  // image du restaurant
   img {
     height: 275px;
   }
@@ -56,19 +65,19 @@ main {
     top: 30px;
   }
 }
-//article des menus 
+//article des menus
 article {
   @include flexCenter(column);
   background-color: $silver;
 }
-//section des menus 
+//section des menus
 section {
   @include flexCenter(column);
   position: relative;
   z-index: 10;
   padding: 10px 15px;
 
-// titre des menus
+  // titre des menus
 
   h2 {
     font-family: "Shrikhand", cursive;
@@ -101,81 +110,64 @@ section {
     background-color: $silver;
     box-shadow: 1px 2px 10px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    cursor: pointer;
 
-    @keyframes appear {
-      0% {
-        transform: scale(0);
-      }
-
-      100% {
-        transform: scale(1);
-      }
+    .fa-circle-check {
+      opacity: 0;
+      @include flexCenter();
+      color: $white;
+      background: $color-tertiary;
+      width: 0;
+      height: 100%;
+      position: relative;
+      border-radius: 0 15px 15px 0;
+      padding: 29px 0;
+      transition: all 600ms ease-in-out;
     }
 
-    // nom du plat
-    h3 {
-      display: block;
-      font-size: 1.1rem;
-      margin: 0 0 5px;
+    &:hover .fa-circle-check,
+    &:focus .fa-circle-check {
+      opacity: 1;
+      width: 64px;
+      padding: 29px 16px;
+    }
+  }
+  // nom du plat
+  h3 {
+    display: block;
+    font-size: 1.1rem;
+    margin: 0 0 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   // description du plat
 
   p {
-      margin: 0;
-      font-size: 1rem;
-      font-weight: 500;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
-// nom du plat et prix et description du plat
+  // nom du plat et prix et description du plat
   & hgroup {
-      overflow: hidden;
-      white-space: nowrap;
-      
+    overflow: hidden;
   }
 
-// prix du plat et fa circlecheck 
+  // prix du plat et fa circlecheck
   div {
-      display: flex;
-      align-items: end;
+    display: flex;
+    align-items: end;
 
-      b {
-          padding: 16px 12px;
-          font-size: 0.950rem;
-          font-weight: 700;
-
-      }
-
-      .fa-circle-check {
-          opacity: 0;
-          @include flexCenter();
-          color: $white;
-          background: $color-tertiary;
-          width: 0;
-          height: 100%;
-          position: relative;
-          border-radius: 0 15px 15px 0;
-          padding: 29px 0;
-          transition: all 600ms ease-in-out;
-          
-      }
+    b {
+      padding: 16px 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
   }
-
-  &:hover,
-  &:focus {
-
-      .fa-circle-check {
-          opacity: 1;
-          width: 64px;
-          padding: 29px 16px;
-      }
-
-  }
-
-}
-
 }
 section:nth-child(2) li {
   animation: appear 1s both;
