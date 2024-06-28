@@ -1,0 +1,374 @@
+/* INDEX */
+
+// HEADER
+
+/*-----------------LOADER-----------------*/
+.overlay {
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #99e2d0;
+  opacity: 0;
+  animation: loader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+  position: fixed;
+  animation: myloader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+}
+
+.load {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  animation: myloader 3000ms cubic-bezier(0, 0, 0.58, 1) forwards 1;
+
+  &__letters {
+    display: flex;
+    font-size: 3.1rem;
+    font-family: "Shrikhand", serif;
+
+    .letter-1 {
+      animation: letter_loader 2300ms ease-in 150ms 4; // 1.5s de l'animation ça commence a partir de 150ms
+    }
+    .letter-2 {
+      animation: letter_loader 2300ms ease-in 300ms 4;
+    }
+    .letter-3 {
+      animation: letter_loader 2300ms ease-in 450ms 4;
+    }
+    .letter-4 {
+      animation: letter_loader 2300ms ease-in 600ms 4;
+    }
+    .letter-5 {
+      animation: letter_loader 2300ms ease-in 750ms 4;
+    }
+    .letter-6 {
+      animation: letter_loader 2300ms ease-in 900ms 4;
+    }
+    .letter-7 {
+      animation: letter_loader 2300ms ease-in 1050ms 4;
+    }
+    .letter-8 {
+      animation: letter_loader 2300ms ease-in 1200ms 4;
+    }
+  }
+
+  .load__bar {
+    display: flex;
+    position: relative;
+    background: #ffffff;
+    width: 220px;
+    height: 3px;
+    transform-origin: left;
+    animation: loader__bar 3000ms ease-in-out backwards;
+    margin-top: 10px;
+  }
+}
+
+@keyframes loader__bar {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.1;
+  }
+  20% {
+    transform: scaleX(0.2);
+  }
+  40% {
+    transform: scaleX(0.4);
+  }
+  60% {
+    transform: scaleX(0.6);
+  }
+  80% {
+    transform: scaleX(0.8);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+// ANIMATION LETTER point zero opacite et scaleY 1
+@keyframes letter_loader {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  20% {
+    opacity: 1;
+    transform: scaleY(
+      2
+    ); // 1.2 permet de zoomer plus grand que 1 et de le faire grossir plus rapidement pour qu'il soit visible
+  }
+  40% {
+    opacity: 1;
+    transform: scaleY(
+      1
+    ); //scaleY(1) permet de zoomer et de revenir à sa taille initiale et de le faire grossir
+  }
+  60% {
+    opacity: 1;
+    transform: scaleY(2);
+  }
+  80% {
+    opacity: 0;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes myloader {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+// HEADER location dot + span
+form {
+  @include flexCenter();
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  height: 50px;
+  background-color: $grey;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.35);
+}
+
+.fa-location-dot {
+ @include flexCenter();
+  align-items: center;
+}
+
+span {
+  font-size: 1.2rem;
+  align-self: center;
+}
+
+// MAIN HEADER qui englobe le h1 le p jusqu'au footer
+
+main header {
+  @include flexCenter(column);
+  justify-content: center;
+  text-align: center;
+  padding: 0 10px;
+  background-color: $silver;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.btn {
+  margin-bottom: 40px;
+}
+
+/****** functioning *****/
+
+.functioning {
+  @include flexCenter(column);
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 20px 60px 20px 15px;
+  }
+
+  ol {
+    counter-reset: num;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px 25px 0px 25px;
+  }
+
+  li {
+    position: relative;
+    counter-increment: num;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: $silver;
+    border-radius: 20px;
+    padding: 20px 20px 20px 35px;
+    box-shadow: 0px 8px 8px 0px rgba(0, 0, 0, 0.25);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.125rem;
+
+    &::before {
+      content: counter(num);
+      position: absolute;
+      left: 15px;
+      background-color: $color-primary;
+      color: $white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      @include flexCenter();
+      font-size: 1rem;
+      margin-left: -30px;
+    }
+  }
+
+  li:hover i {
+    color: $color-primary;
+  }
+}
+
+/*** restaurants_les restaurants ******/
+
+[id="restaurants"] {
+  @include flexCenter(column);
+  gap: 20px;
+  padding: 20px 20px 80px;
+  background-color: $silver;
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    gap: 20px;
+    width: 100%;
+  }
+
+  li {
+   @include flexColumn();
+    width: 100%;
+  }
+  // FIGURE égale image + figcaption
+
+  figure {
+    position: relative;
+
+    //nouveau nouveau nouveau badge
+    //nouveau badge
+    b {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: $color-tertiary;
+      color: $green-font;
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+  }
+
+  // image pour les cards
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+  }
+
+  // figcaption pour les cards
+
+  figcaption {
+    @include flexColumn();
+    align-items: baseline;
+    padding: 20px 15px 0;
+    background-color: $white;
+    border-radius: 0 0 15px 15px;
+  }
+
+  p {
+    margin: 0;
+    padding-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  h3 {
+    margin: 0 0 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.125rem;
+  }
+//heart pour les cards et le lien pour le coeur 
+  i {
+    position: absolute;
+    right: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    p {
+      margin-bottom: 0; //P de decouvrir nos restaurants 
+    }
+  }
+
+  .functioning {
+    flex-direction: column;
+    align-items: baseline;
+    padding: 50px 100px;
+    margin: 0;
+
+    ol {
+      display: flex;
+      flex-direction: row;
+      gap: 5vw;
+    }
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  h2 {
+    margin: 0 0 26px;
+  }
+
+  #restaurants {
+    padding: 20px 100px 20px 100px;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      column-gap: 100px;
+      row-gap: 50px;
+    }
+
+    li {
+      width: calc((100% - 100px) / 2);
+    }
+
+    img {
+      height: 250px;
+    }
+  }
+}
